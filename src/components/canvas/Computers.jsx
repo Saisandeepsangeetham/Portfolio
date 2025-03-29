@@ -1,27 +1,51 @@
-import { Suspense, } from 'react';
+import { Suspense, useEffect, useState} from 'react';
 import { Canvas, extend } from '@react-three/fiber';
 import CanvasLoader from '../Loader';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 extend({ OrbitControls });
 
-const Model = () => {
+const Model = ({isMobile}) => {
   const computer = useGLTF('/desktop_pc/scene.gltf');
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.15} groundColor="black" />
-      <pointLight intensity={1} />
+      <hemisphereLight intensity={1} groundColor="black" />
+      <pointLight intensity={isMobile ? 1.0 : 1.5} />
+      <spotLight 
+        position={[-20,50,10]}
+        penumbra = {1}
+        intensity={1}
+        castShadow
+        shadow-mapSize={1024}
+      />
       <primitive 
         object={computer.scene}
-        scale={0.75}
-        position={[0, -3, -1.5]}
-        rotation={[-0.01,-0.2,-0.1]}
+        scale={isMobile ? 0.35 : 0.75}
+        position={isMobile ? [-0.75,-1.2,0] :[-0.1, -3, -1.5]}
+        rotation={isMobile ? [-0.01,1.6,-0.1] : [0,-0.2,-0.1]}
       />
     </mesh>
   );
 };
 
 const ComputersCanvas = () => {
+  const [isMobile, setisMobile] = useState(false)
+  
+  useEffect(()=>{
+    const mediaQuery = window.matchMedia('(max-width: 500px)');
+
+    setisMobile(mediaQuery.matches);
+
+    const handleMediaQueryChange = (event) => {
+      setisMobile(event.matches);
+    }
+
+    mediaQuery.addEventListener('change', handleMediaQueryChange);
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaQueryChange);
+    };
+  },[]);
+
   return (
     <Canvas
       frameloop="demand"
@@ -30,15 +54,15 @@ const ComputersCanvas = () => {
       gl={{ preserveDrawingBuffer: true }}
     >
       {/* Need to add the fallback to the suspense as the canvas loader */}
-      <Suspense>
+      <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
-          autoRotate = {true}
-          autoRotateSpeed = {2}
+          autoRotate = {isMobile && true}
+          autoRotateSpeed = {3}
         />
-        <Model />
+        <Model isMobile = {isMobile}/>
       </Suspense>
       <Preload all />
     </Canvas>

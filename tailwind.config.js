@@ -21,6 +21,10 @@ export const theme = {
     backgroundImage: {
       "hero-pattern": "url('/src/assets/herobg.png')",
     },
+    //animation for the loader
+    animation: {
+      'spin': 'spin 1.5s linear infinite',
+    },
   },
 };
 export const plugins = [];

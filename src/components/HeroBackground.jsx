@@ -28,13 +28,13 @@ function HeroBackground() {
 
       <img
         src={Mountain3}
-        className="absolute h-[408px] top-[280px] sm:top-[347px] sm:z-auto z-10"
+        className="absolute h-[408px] top-[280px] sm:top-[350px] sm:z-auto z-5"
         alt="Mountain3"
       />
 
       <img
         src={Mountain5}
-        className="absolute mx-auto h-[820px] md:top-[450px] top-[100px] sm:block"
+        className="absolute mx-auto h-[820px] md:top-[450px] top-[150px] sm:block"
         alt="Mountain5"
       />
     </div>
