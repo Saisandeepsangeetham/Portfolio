@@ -1,10 +1,11 @@
 import {useState, useEffect} from 'react'
 import { styles } from '../styles.js';
 import { ComputersCanvas } from './canvas';
+import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { ErrorBoundary } from 'react-error-boundary';
 import ErrorFallbackCanvas from './canvas/ErrorFallbackCanvas.jsx';
-
+import { sequenceText } from '../constants/index.js';
 
 
 const Hero = () => {
@@ -23,18 +24,7 @@ const Hero = () => {
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>Hi, I'm <span className='text-[#915eff]'>Saisandeep</span></h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            <TypeAnimation sequence={[
-              'Full Stack Developer',
-              1000,
-              'Flutter Developer',
-              1000,
-              'ReactJs Developer',
-              1000,
-              'AI/ML Enthusiast',
-              1000,
-              'Problem Solver',
-              1000
-            ]}
+            <TypeAnimation sequence={sequenceText}
             wrapper='span'
             cursor={true}
             repeat={Infinity}
@@ -50,6 +40,23 @@ const Hero = () => {
       >      
       <ComputersCanvas isMobile={isMobile}/>
       </ErrorBoundary>
+      <div className='absolute xs:bottom-10 bottom-32 w-full justify-center items-center hidden md:flex'>
+        <a href='#about'>
+          <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
+            <motion.div 
+              animate = {{
+                y: [0, 24, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                repeatType: 'loop',
+              }}
+              className='w-3 h-3 rounded-full bg-secondary mb-1'
+            />
+          </div>
+        </a>
+      </div>
     </section>
   )
 }

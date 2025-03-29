@@ -26,7 +26,7 @@ import {
   threejs,
 } from "../assets";
 
-export const navLinks = [
+const navLinks = [
   {
     id: "resume",
     title: "Resume"
@@ -49,22 +49,39 @@ export const navLinks = [
   },
 ];
 
-const services = [
+const sequenceText = [
+  'Full Stack Developer',
+  1000,
+  'Flutter Developer',
+  1000,
+  'ReactJs Developer',
+  1000,
+  'AI/ML Enthusiast',
+  1000,
+  'Problem Solver',
+  1000
+];
+
+const socials = [
   {
-    title: "Web Developer",
-    icon: web,
+    id: "github",
+    // icon: <GithubIcon />,
+    link: "https://github.com/Shivam-Sharma-1",
   },
   {
-    title: "React Native Developer",
-    icon: mobile,
+    id: "linkedin",
+    // icon: <LinkedInIcon />,
+    link: "https://www.linkedin.com/in/shivamsharma77607",
   },
   {
-    title: "Backend Developer",
-    icon: backend,
+    id: "x",
+    // icon: <XIcon />,
+    link: "https://twitter.com/Shivam_1_Sharma",
   },
   {
-    title: "Content Creator",
-    icon: creator,
+    id: "instagram",
+    // icon: <InstagramIcon />,
+    link: "https://www.instagram.com/_.shivam._.here._",
   },
 ];
 
@@ -271,4 +288,4 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { navLinks, sequenceText, socials, technologies, experiences, testimonials, projects };
