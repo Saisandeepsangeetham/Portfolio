@@ -1,4 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+
 import {
   About,
   Contact,
@@ -13,6 +15,23 @@ import {
 import HeroBackground from "./components/HeroBackground";
 
 const App = () => {
+  const [isMobile, setisMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+
+    setisMobile(mediaQuery.matches);
+
+    const handleMediaQueryChange = (event) => {
+      setisMobile(event.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
+
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
@@ -39,8 +58,8 @@ const App = () => {
                 className="transition-all duration-300 ease-in-out delay-150 path-0"></path>
             </svg>
           </div>
-          <div className="absolute z-15 bg-[#1a1a2e] w-full h-[500px] sm:h-[300px]">
-            <About />
+          <div className="absolute z-15 top-50% bg-[#1a1a2e] w-full h-auto sm:h-[300px] md:h-auto md:top-[850px] lg:top-[1000px]">
+            <About isMobile={isMobile}/>
           </div>
           <Contact />
           <StarsCanvas />
