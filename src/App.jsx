@@ -1,37 +1,53 @@
-import {BrowserRouter} from 'react-router-dom';
-import {About , Contact, Experience, Feedbacks, Hero, Navbar,Tech, Works, StarsCanvas} from './components';
-import HeroBackground from './components/HeroBackground';
+import { BrowserRouter } from "react-router-dom";
+import {
+  About,
+  Contact,
+  Experience,
+  Feedbacks,
+  Hero,
+  Navbar,
+  Tech,
+  Works,
+  StarsCanvas,
+} from "./components";
+import HeroBackground from "./components/HeroBackground";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <div className='relative z-0 bg-primary'>
-        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
-          <Navbar/>
-          <HeroBackground/>
-          <Hero/>
-        </div>
-        <div className="relative -mt-32 sm:-mt-20">
-          <svg
-            className="w-full h-auto"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1440 320"
-          >
-            <path
-              fill="#1a1a2e" // Adjust the color to match your design
-              fillOpacity="1"
-              d="M0,224L48,213.3C96,203,192,181,288,154.7C384,128,480,96,576,96C672,96,768,128,864,144C960,160,1056,160,1152,149.3C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-            ></path>
-          </svg>
+      <div className="relative z-0 bg-primary">
+        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+          <Navbar />
+          <HeroBackground />
+          <Hero />
         </div>
         <div>
-          <About />
-          <Contact/>
-          <StarsCanvas/>
+          <div className="relative -mt-[300px] sm:-mt-26 md:-mt-20 block">
+            <svg
+              width="100%"
+              height="100%"
+              id="svg"
+              viewBox="0 0 1440 390"
+              xmlns="http://www.w3.org/2000/svg"
+              className="transition duration-300 ease-in-out delay-150">
+              <path
+                d="M 0,400 L 0,150 C 101.64593301435409,117.66507177033492 203.29186602870817,85.33014354066985 308,81 C 412.70813397129183,76.66985645933015 520.4784688995215,100.34449760765551 618,128 C 715.5215311004785,155.6555023923445 802.7942583732058,187.2918660287081 882,202 C 961.2057416267942,216.7081339712919 1032.3444976076555,214.48803827751198 1124,203 C 1215.6555023923445,191.51196172248802 1327.8277511961724,170.755980861244 1440,150 L 1440,400 L 0,400 Z"
+                stroke="none"
+                strokeWidth="0"
+                fill="#1a1a2e"
+                fillOpacity="1"
+                className="transition-all duration-300 ease-in-out delay-150 path-0"></path>
+            </svg>
+          </div>
+          <div className="absolute z-15 bg-[#1a1a2e] w-full h-[500px] sm:h-[300px]">
+            <About />
+          </div>
+          <Contact />
+          <StarsCanvas />
         </div>
       </div>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default App
+export default App;

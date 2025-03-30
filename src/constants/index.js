@@ -1,4 +1,5 @@
 import { title } from "framer-motion/client";
+import { github, linkedin, instagram } from "../assets";
 import {
   mobile,
   backend,
@@ -65,22 +66,17 @@ const sequenceText = [
 const socials = [
   {
     id: "github",
-    // icon: <GithubIcon />,
-    link: "https://github.com/Shivam-Sharma-1",
+    icon: github,
+    link: "https://github.com/Saisandeepsangeetham",
   },
   {
     id: "linkedin",
-    // icon: <LinkedInIcon />,
-    link: "https://www.linkedin.com/in/shivamsharma77607",
-  },
-  {
-    id: "x",
-    // icon: <XIcon />,
-    link: "https://twitter.com/Shivam_1_Sharma",
+    icon: linkedin,
+    link: "https://www.linkedin.com/in/sai-sandeep-sangeetham",
   },
   {
     id: "instagram",
-    // icon: <InstagramIcon />,
+    icon: instagram,
     link: "https://www.instagram.com/_.shivam._.here._",
   },
 ];
