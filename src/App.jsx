@@ -4,12 +4,11 @@ import React, { useEffect, useState } from "react";
 import {
   About,
   Contact,
-  Experience,
+  Education,
   Feedbacks,
   Hero,
   Navbar,
   Tech,
-  Works,
   StarsCanvas,
 } from "./components";
 import HeroBackground from "./components/HeroBackground";
@@ -59,9 +58,11 @@ const App = () => {
             </svg>
           </div>
           <div className="absolute z-15 top-50% bg-[#1a1a2e] w-full h-auto sm:h-[300px] md:h-auto md:top-[850px] lg:top-[1000px]">
-            <About isMobile={isMobile}/>
+            <About isMobile={isMobile} />
+            <div className="relative mt-20 pt-10">
+              <Education />
+            </div>
           </div>
-          <Contact />
           <StarsCanvas />
         </div>
       </div>
