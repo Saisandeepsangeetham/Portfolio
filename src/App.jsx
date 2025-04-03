@@ -8,7 +8,7 @@ import {
   Feedbacks,
   Hero,
   Navbar,
-  Tech,
+  Skills,
   StarsCanvas,
 } from "./components";
 import HeroBackground from "./components/HeroBackground";
@@ -61,6 +61,9 @@ const App = () => {
             <About isMobile={isMobile} />
             <div className="relative mt-20 pt-10">
               <Education />
+            </div>
+            <div className="relative mt-15 pt-10">
+              <Skills />
             </div>
           </div>
           <StarsCanvas />

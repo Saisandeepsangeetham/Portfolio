@@ -1,6 +1,8 @@
 import { title } from "framer-motion/client";
 import {
-  github, linkedin, instagram,
+  github,
+  linkedin,
+  instagram,
   mobile,
   backend,
   creator,
@@ -9,8 +11,10 @@ import {
   typescript,
   html,
   css,
+  c,
+  gcp,
+  colab,
   reactjs,
-  redux,
   tailwind,
   nodejs,
   mongodb,
@@ -23,6 +27,13 @@ import {
   jobit,
   tripguide,
   threejs,
+  python,
+  express,
+  flutter,
+  java,
+  mysql,
+  postgres,
+  postman,
 } from "../assets";
 
 const navLinks = [
@@ -32,11 +43,11 @@ const navLinks = [
   },
   {
     id: "education",
-    title: "Education"
+    title: "Education",
   },
   {
     id: "skills",
-    title:"Skills",
+    title: "Skills",
   },
   {
     id: "projects",
@@ -49,16 +60,16 @@ const navLinks = [
 ];
 
 const sequenceText = [
-  'Full Stack Developer',
+  "Full Stack Developer",
   1000,
-  'Flutter Developer',
+  "Flutter Developer",
   1000,
-  'ReactJs Developer',
+  "ReactJs Developer",
   1000,
-  'AI/ML Enthusiast',
+  "AI/ML Enthusiast",
   1000,
-  'Problem Solver',
-  1000
+  "Problem Solver",
+  1000,
 ];
 
 const socials = [
@@ -98,60 +109,136 @@ const services = [
   },
 ];
 
-const technologies = [
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "TypeScript",
-    icon: typescript,
-  },
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
-  },
-];
+const technologies = {
+  languages: [
+    {
+      name: "HTML5",
+      icon: html,
+      link: "https://html.spec.whatwg.org/multipage/",
+    },
+    {
+      name: "CSS3",
+      icon: css,
+      link: "https://www.w3.org/Style/CSS/Overview.en.html",
+    },
+    {
+      name: "JavaScript",
+      icon: javascript,
+      link: "https://262.ecma-international.org/",
+    },
+    {
+      name: "TypeScript",
+      icon: typescript,
+      link: "https://www.typescriptlang.org/",
+    },
+    {
+      name: "C",
+      icon: c,
+      link: "https://en.cppreference.com/w/c",
+    },
+    {
+      name: "Java",
+      icon: java,
+      link: "https://www.java.com/en/",
+    },
+    {
+      name: "Python",
+      icon: python,
+      link: "https://www.python.org/",
+    },
+  ],
+  frameworks: [
+    {
+      name: "TailwindCSS",
+      icon: tailwind,
+      link: "https://tailwindcss.com/",
+    },
+    {
+      name: "Express.js",
+      icon: express,
+      link: "https://expressjs.com/",
+    },
+    {
+      name: "Flutter",
+      icon: flutter,
+      link: "https://flutter.dev/",
+    },
+  ],
+  libraries: [
+    {
+      name: "React",
+      icon: reactjs,
+      link: "https://react.dev/",
+    },
+    {
+      name: "Three.js",
+      icon: threejs,
+      link: "https://threejs.org/",
+    },
+  ],
+  databases: [
+    {
+      name: "MySQL",
+      icon: mysql,
+      link: "https://www.mysql.com/",
+    },
+    {
+      name: "PostgreSQL",
+      icon: postgres,
+      link: "https://www.postgresql.org",
+    },
+    {
+      name: "MongoDB",
+      icon: mongodb,
+      link: "https://www.mongodb.com/",
+    },
+  ],
+  tools: [
+    {
+      name: "Git",
+      icon: git,
+      link: "https://git-scm.com/",
+    },
+    {
+      name: "Github",
+      icon: github,
+      link: "https://github.com/",
+    },
+    {
+      name: "Postman",
+      icon: postman,
+      link: "https://www.postman.com/",
+    },
+    {
+      name: "Figma",
+      icon: figma,
+      link: "https://www.figma.com/",
+    },
+    {
+      name: "Docker",
+      icon: docker,
+      link: "https://www.docker.com/",
+    },
+  ],
+  environments: [
+    {
+      name: "Node.js",
+      icon: nodejs,
+      link: "https://nodejs.org/en",
+    },
+    {
+      name: "Google Cloud Program",
+      icon: gcp,
+      link: "https://console.cloud.google.com/",
+    },
+    {
+      name: "Google Colab",
+      icon: colab,
+      link: "https://colab.research.google.com/",
+    },
+  ],
+};
+``;
 
 const education = [
   {
@@ -159,17 +246,15 @@ const education = [
     name: "Bachelor Of Engineering Computer Science",
     icon: ssnLogo,
     date: "Oct 2022 - Present",
-    points: [
-    ]
+    points: [],
   },
   {
     title: "Velammal Matric Higher Sec School",
     name: "Higher Secondary Education-12th",
     icon: velammalLogo,
     date: "Jun 2021 - Mar 2022",
-    points: [
-    ]
-  }
+    points: [],
+  },
 ];
 
 const testimonials = [
@@ -265,4 +350,13 @@ const projects = [
   },
 ];
 
-export { navLinks, sequenceText, socials, services, technologies, education, testimonials, projects };
+export {
+  navLinks,
+  sequenceText,
+  socials,
+  services,
+  technologies,
+  education,
+  testimonials,
+  projects,
+};

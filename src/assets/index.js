@@ -9,19 +9,30 @@ import close from "./close.svg";
 import instagram from "./instagram.png";
 import linkedin from "./linkedin.svg";
 
-import css from "./tech/css.png";
-import docker from "./tech/docker.png";
-import figma from "./tech/figma.png";
-import git from "./tech/git.png";
-import html from "./tech/html.png";
-import javascript from "./tech/javascript.png";
-import mongodb from "./tech/mongodb.png";
-import nodejs from "./tech/nodejs.png";
-import reactjs from "./tech/reactjs.png";
-import redux from "./tech/redux.png";
-import tailwind from "./tech/tailwind.png";
-import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.svg";
+// skills
+import css from "./skills/css.png";
+import docker from "./skills/docker.png";
+import figma from "./skills/figma.png";
+import git from "./skills/git.png";
+import html from "./skills/html.png";
+import javascript from "./skills/javascript.png";
+import mongodb from "./skills/mongodb.png";
+import nodejs from "./skills/nodejs.png";
+import postgres from "./skills/postgres.png";
+import python from "./skills/python.png";
+import reactjs from "./skills/reactjs.png";
+import tailwind from "./skills/tailwind.png";
+import typescript from "./skills/typescript.png";
+import threejs from "./skills/threejs.svg";
+import c from "./skills/c.svg";
+import mysql from "./skills/my-sql.png";
+import java from  "./skills/java.svg";
+import flutter from "./skills/flutter.svg";
+import postman from "./skills/postman.svg";
+import express from "./skills/expressjs.png";
+import gcp from "./skills/gcp.png";
+import colab from "./skills/colab.png";
+
 import ssnLogo from "./ssnLogo.png";
 import velammalLogo from "./Velammal.jpeg";
 
@@ -48,10 +59,19 @@ export {
   javascript,
   mongodb,
   nodejs,
+  postgres,
+  python,
   reactjs,
-  redux,
   tailwind,
   typescript,
+  c,
+  mysql,
+  gcp,
+  colab,
+  flutter,
+  java,
+  postman,
+  express,
   threejs,
   ssnLogo,
   velammalLogo,

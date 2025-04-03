@@ -1,14 +1,14 @@
 import React from "react";
+import "react-vertical-timeline-component/style.min.css";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
-import { motion } from "framer-motion";
-import "react-vertical-timeline-component/style.min.css";
-
-import { styles } from "../styles";
-import { education } from "../constants";
 import { textVariant } from "../utils/motion";
+import { education } from "../constants";
+
+import { motion } from "framer-motion";
+import { styles } from "../styles";
 
 const EducationCard = ({ education }) => {
   return (<VerticalTimelineElement
