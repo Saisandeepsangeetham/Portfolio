@@ -5,7 +5,7 @@ import {
   About,
   Contact,
   Education,
-  Feedbacks,
+  Projects,
   Hero,
   Navbar,
   Skills,
@@ -64,6 +64,9 @@ const App = () => {
             </div>
             <div className="relative mt-15 pt-10">
               <Skills />
+            </div>
+            <div className="relative mt-15 pt-10">
+              <Projects />
             </div>
           </div>
           <StarsCanvas />

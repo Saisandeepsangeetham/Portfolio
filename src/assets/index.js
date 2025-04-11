@@ -36,11 +36,22 @@ import colab from "./skills/colab.png";
 import ssnLogo from "./ssnLogo.png";
 import velammalLogo from "./Velammal.jpeg";
 
+import passwordapp from "./passwordManager.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import nextgenChatbot from "./nextgenChatBot.png";
+import assitiveGlasses from "./assistiveGlasses.png";
+import jobconnect from "./jobconnect.png";
+import internshipPortal from "./internshipPortal.png";
+import boneFracture from "./boneFracture.png";
 
 export {
+  nextgenChatbot,
+  internshipPortal,
+  boneFracture,
+  assitiveGlasses,
+  jobconnect,
   logo,
   backend,
   creator,
@@ -74,6 +85,7 @@ export {
   express,
   threejs,
   ssnLogo,
+  passwordapp,
   velammalLogo,
   carrent,
   jobit,

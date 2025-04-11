@@ -20,12 +20,14 @@ import {
   mongodb,
   git,
   ssnLogo,
+  passwordapp,
+  assitiveGlasses,
   velammalLogo,
   figma,
   docker,
-  carrent,
-  jobit,
-  tripguide,
+  nextgenChatbot,
+  boneFracture,
+  jobconnect,
   threejs,
   python,
   express,
@@ -34,6 +36,7 @@ import {
   mysql,
   postgres,
   postman,
+  internshipPortal,
 } from "../assets";
 
 const navLinks = [
@@ -64,7 +67,7 @@ const sequenceText = [
   1000,
   "Flutter Developer",
   1000,
-  "ReactJs Developer",
+  "<ReactJs Developer />",
   1000,
   "AI/ML Enthusiast",
   1000,
@@ -257,95 +260,165 @@ const education = [
   },
 ];
 
-const testimonials = [
-  {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-  },
-];
-
 const projects = [
   {
-    name: "Car Rent",
+    name: "Assistive Glasses For Visually Impaired People",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Designed and developed assistive glasses with face, object, and text recognition capabilities to aid visually impaired users, showcasing advanced integration of YOLO v4 and EasyOCR on a Raspberry Pi platform.",
     tags: [
       {
-        name: "react",
+        name: "Raspberry Pi",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "YOLO v4",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "EasyOCR",
         color: "pink-text-gradient",
       },
+      {
+        name: "Face Recognition",
+        color: "orange-text-gradient",
+      },
+      {
+        name: "Object Recognition",
+        color: "purple-text-gradient",
+      },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: assitiveGlasses,
+    source_code_link:
+      "https://github.com/Saisandeepsangeetham/Assistive-Glasses-For-Visually-Impaired-People",
   },
   {
-    name: "Job IT",
+    name: "Password Manager Application",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Secure password manager built with Flutter, Dart, and SQLite. Features: biometric login, master password, PIN lock, password storage, generator (custom length, letters, numbers, symbols), search, delete, and clean UI.",
     tags: [
       {
-        name: "react",
+        name: "Flutter",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "Dart",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "SQLite",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: passwordapp,
+    source_code_link:
+      "https://github.com/Saisandeepsangeetham/Password-Manager",
   },
   {
-    name: "Trip Guide",
+    name: "NextGen ChatBot",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "AI chatbot built with Gemini API in a MERN stack, offering intelligent conversations with user authentication and database integration.",
     tags: [
       {
-        name: "nextjs",
+        name: "MongoDB",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "Express.js",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "React.js",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "Node.js",
+        color: "orange-text-gradient",
+      },
+      {
+        name: "Gemini API",
+        color: "purple-text-gradient",
+      },
+    ],
+    image: nextgenChatbot,
+    source_code_link: "https://github.com/Saisandeepsangeetham/NextGen-ChatBot",
+  },
+  {
+    name: "SSN Internship Management Portal",
+    description:
+      "A comprehensive web app for managing student internships at SSN College. Features: Google OAuth login, internship submission form, document upload, coordinator dashboard with filtering, Excel export, and responsive design.",
+    tags: [
+      {
+        name: "JavaScript",
+        color: "yellow-text-gradient",
+      },
+      {
+        name: "Node.js",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Express.js",
+        color: "gray-text-gradient",
+      },
+      {
+        name: "MongoDB",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Google Drive API",
+        color: "red-text-gradient",
+      },
+    ],
+    image: internshipPortal,
+    source_code_link: "https://github.com/Saisandeepsangeetham/InternForm",
+  },
+  {
+    name: "Job Connect: Tailored Job Recommendations",
+    description:
+      "A C-based CLI job recommendation system using KNN algorithm. Matches candidate skills with recruiter needs, providing tailored job matches and application management for seekers and hiring managers.",
+    tags: [
+      {
+        name: "C",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "KNN Algorithm",
+        color: "green-text-gradient",
+      },
+      {
+        name: "CLI",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
+    image: jobconnect,
+    source_code_link: "https://github.com/Saisandeepsangeetham/Job_connect",
+  },
+  {
+    name: "Advanced Image Processing For Bone Fracture Detection",
+    description:
+      "Research on enhancing X-ray images using CLAHE and smoothing filters, with Decision Trees/KNN/Linear Regression for fracture detection. Achieved higher accuracy via preprocessing.",
+    tags: [
+      {
+        name: "Image Processing",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "CLAHE",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Decision Trees",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "KNN",
+        color: "orange-text-gradient",
+      },
+      {
+        name: "Linear Classifier",
+        color: "purple-text-gradient",
+      },
+    ],
+    image: boneFracture,
     source_code_link: "https://github.com/",
   },
 ];
@@ -357,6 +430,5 @@ export {
   services,
   technologies,
   education,
-  testimonials,
   projects,
 };
