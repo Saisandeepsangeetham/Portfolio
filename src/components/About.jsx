@@ -40,7 +40,7 @@ const About = ({ isMobile }) => {
         <div className="md:flex-1 md:max-w-2xl lg:max-w-3xl md:pt-12">
           <motion.div variants={textVariant()}>
             <p className={styles.sectionSubText}>Introduction</p>
-            <h2 className={styles.sectionHeadText}>Overview.</h2>
+            <h2 className={styles.sectionHeadText}>Overview</h2>
           </motion.div>
           <motion.div
             variants={fadeIn("", "", 0.1, 1)}

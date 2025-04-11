@@ -73,7 +73,7 @@ const Skills = () => {
         className="text-center mx-auto"
       >
         <p className={styles.sectionSubText}>What I have learnt so far</p>
-        <h2 className={styles.sectionHeadText}>Skills.</h2>
+        <h2 className={styles.sectionHeadText}>Skills</h2>
       </motion.div>
 
       <motion.div
