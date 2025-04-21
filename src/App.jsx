@@ -68,7 +68,7 @@ const App = () => {
             <div className="relative mt-15 pt-10">
               <Projects />
             </div>
-            <div className="relative mt-15 pt-10 h-screen">
+            <div className="relative mt-15 pt-10 min-h-screen pb-10">
               <div className="absolute inset-0 overflow-hidden">
                 <StarsCanvas />
               </div>

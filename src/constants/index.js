@@ -258,14 +258,18 @@ const education = [
     name: "Bachelor Of Engineering Computer Science",
     icon: ssnLogo,
     date: "Oct 2022 - Present",
-    points: [],
+    points: [
+      "Currently in the pre-year of undergraduate studies in Computer Science, maintaining a CGPA of 8.3/10 up to the 5th semester.",
+      "Completed key coursework in Data Structures, DBMS, OOP, and Operating Systems, forming a strong foundation in both theoretical and applied computer science.",
+      "Recipient of the AICTE Scholarship for academic excellence in the 12th State Board Exams, covering 50% of annual tuition fees throughout the degree."
+    ],
   },
   {
     title: "Velammal Matric Higher Sec School",
     name: "Higher Secondary Education-12th",
     icon: velammalLogo,
     date: "Jun 2021 - Mar 2022",
-    points: [],
+    points: ["Completed higher secondary education with a focus on Computer Science, securing 97.83% (587/600) in the final board examinations."],
   },
 ];
 

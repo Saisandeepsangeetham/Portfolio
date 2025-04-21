@@ -27,6 +27,16 @@ const EducationCard = ({ education }) => {
     <div>
       <h3 className="text-white text-[24px] font-bold">{education.title}</h3>
       <p className="text-secondary text-[16px] font-semibold" style= {{margin:0}}>{education.name}</p>
+      <ul className="mt-5 list-disc ml-5 space-y-2">
+        {education.points.map((point, index) => (
+          <li
+            key={`experience-point-${index}`}
+            className="text-secondary text-[14px] pl-1 tracking-wider"
+          >
+            {point}
+          </li>
+        ))}
+      </ul>
     </div>
 
   </VerticalTimelineElement>)
