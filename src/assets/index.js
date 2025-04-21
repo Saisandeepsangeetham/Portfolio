@@ -7,6 +7,7 @@ import instagram from "./social_media/instagram.png";
 import linkedin from "./social_media/linkedin.svg";
 
 import html from "./skills/html.png";
+import cplusplus from "./skills/Cplusplus.png";
 import css from "./skills/css.png";
 import javascript from "./skills/javascript.png";
 import typescript from "./skills/typescript.png";
@@ -55,6 +56,7 @@ export {
   linkedin,
 
   html,
+  cplusplus,
   css,
   javascript,
   typescript,

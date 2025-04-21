@@ -40,6 +40,7 @@ import {
   creator,
   mobile,
   web,
+  cplusplus,
 } from "../assets";
 
 const navLinks = [
@@ -141,6 +142,11 @@ const technologies = {
       name: "C",
       icon: c,
       link: "https://en.cppreference.com/w/c",
+    },
+    {
+      name: "C++",
+      icon: cplusplus,
+      link: "https://cplusplus.com/",
     },
     {
       name: "Java",

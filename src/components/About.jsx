@@ -13,7 +13,7 @@ const ServiceCard = ({ index, title, icon }) => {
   return (
     <Tilt classNam="xs:w-[250px] w-full">
       <motion.div
-        variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
+        variants={fadeIn("right", "spring", 0.2 * index, 0.75)}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.25 }}

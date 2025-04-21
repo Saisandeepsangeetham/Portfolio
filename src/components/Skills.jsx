@@ -31,23 +31,21 @@ const Skills = () => {
         variants={fadeIn("right", "spring", 0.75)}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
-      >
+        viewport={{ once: true, amount: 0.25 }}>
         {technology.map((tech, idx) => (
           <a
             href={tech.link}
             key={tech.name}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-row"
-          >
+            className="flex flex-row">
             <div className="w-[40px] h-[40px] relative flex items-center group cursor-pointer">
               <img
                 src={tech.icon}
                 alt={tech.name}
                 className="w-full h-full object-contain"
               />
-              <div className="opacity-0 w-fit min-w-[80px] bg-[#9b4dee] text-[#e5e6e9] text-center text-xs rounded-lg py-2 absolute z-10 group-hover:opacity-100 px-3 -top-12 -left-1/3 pointer-events-none">
+              <div className="opacity-0 w-fit min-w-[80px] bg-primary text-[#e5e6e9] text-center text-xs rounded-lg py-2 absolute z-10 group-hover:opacity-100 px-3 -top-12 -left-1/3 pointer-events-none">
                 {tech.name}
               </div>
             </div>
@@ -70,33 +68,32 @@ const Skills = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.25 }}
-        className="text-center mx-auto"
-      >
+        className="text-center mx-auto">
         <p className={styles.sectionSubText}>What I have learnt so far</p>
         <h2 className={styles.sectionHeadText}>Skills</h2>
       </motion.div>
 
-      <motion.div
-        variants={fadeIn("", "", 0.1, 1)}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
-        className="mt-4 text-[#e5e6e9] text-[17px] bg-[#2e384d] md:w-fit md:min-w-[60%] w-full h-full leading-[30px] flex md:flex-row flex-col gap-4 p-8 md:px-16 mx-auto rounded-lg justify-between bg-opacity-90 shadow-sm shadow-[#804dee]"
-      >
+      <div className="flex justify-center w-full">
         <motion.div
-          variants={textVariant()}
+          variants={fadeIn("", "", 0.1, 1)}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true }}
-          className="flex flex-col justify-between h-full gap-5"
-        >
-          {techNames}
+          viewport={{ once: true, amount: 0.25 }}
+          className="mt-4 text-[#e5e6e9] text-[17px] bg-[#2e384d] w-full md:w-[90%] lg:w-[60%] xl:w-[50%] h-full leading-[30px] flex md:flex-row flex-col gap-4 p-8 md:px-16 rounded-lg justify-between bg-opacity-90 shadow-sm shadow-[#804dee]">
+          <motion.div
+            variants={textVariant()}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="flex flex-col justify-between h-full gap-5">
+            {techNames}
+          </motion.div>
+          <div className="w-[2px] h-[400px] bg-[#cbb8f5] rounded-lg md:flex hidden mx-8" />
+          <div className="md:w-[80%] w-full pl-2 h-full flex flex-col gap-8">
+            {languageSections}
+          </div>
         </motion.div>
-        <div className="w-[2px] h-[400px] bg-[#cbb8f5] rounded-lg md:flex hidden mx-8" />
-        <div className="md:w-[80%] w-full pl-2 h-full flex flex-col gap-8">
-          {languageSections}
-        </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
