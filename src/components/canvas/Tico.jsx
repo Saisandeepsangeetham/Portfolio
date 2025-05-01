@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
-import CanvasLoader from "../Loader";
+import {CanvasLoader} from "../Loader";
 
 const Ticofab = () => {
   const tico = useGLTF("./astro/scene.gltf");

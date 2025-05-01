@@ -12,9 +12,11 @@ import {
   StarsCanvas,
 } from "./components";
 import HeroBackground from "./components/HeroBackground";
+import { Preloader } from "./components/Loader";
 
 const App = () => {
   const [isMobile, setisMobile] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");
@@ -25,6 +27,12 @@ const App = () => {
       setisMobile(event.matches);
     };
 
+    const preloadAssets = () => {
+      window.addEventListener("load", () => {
+        setTimeout(() => {}, 500);
+      });
+    };
+    preloadAssets();
     mediaQuery.addEventListener("change", handleMediaQueryChange);
     return () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
@@ -32,54 +40,57 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
-      <div className="relative z-0 bg-primary">
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-          <Navbar />
-          <HeroBackground />
-          <Hero />
-        </div>
-        <div>
-          <div className="relative -mt-[300px] sm:-mt-26 md:-mt-20 block">
-            <svg
-              width="100%"
-              height="100%"
-              id="svg"
-              viewBox="0 0 1440 390"
-              xmlns="http://www.w3.org/2000/svg"
-              className="transition duration-300 ease-in-out delay-150">
-              <path
-                d="M 0,400 L 0,150 C 101.64593301435409,117.66507177033492 203.29186602870817,85.33014354066985 308,81 C 412.70813397129183,76.66985645933015 520.4784688995215,100.34449760765551 618,128 C 715.5215311004785,155.6555023923445 802.7942583732058,187.2918660287081 882,202 C 961.2057416267942,216.7081339712919 1032.3444976076555,214.48803827751198 1124,203 C 1215.6555023923445,191.51196172248802 1327.8277511961724,170.755980861244 1440,150 L 1440,400 L 0,400 Z"
-                stroke="none"
-                strokeWidth="0"
-                fill="#1a1a2e"
-                fillOpacity="1"
-                className="transition-all duration-300 ease-in-out delay-150 path-0"></path>
-            </svg>
+    <>
+      {loading && <Preloader setLoading={setLoading}/>}
+      <BrowserRouter>
+        <div className="relative z-0 bg-primary">
+          <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+            <Navbar />
+            <HeroBackground />
+            <Hero />
           </div>
-          <div className="absolute z-15 top-50% bg-[#1a1a2e] w-full h-auto sm:h-[300px] md:h-auto md:top-[850px] lg:top-[1000px]">
-            <About isMobile={isMobile} />
-            <div className="relative mt-20 pt-10">
-              <Education />
+          <div>
+            <div className="relative -mt-[300px] sm:-mt-26 md:-mt-20 block">
+              <svg
+                width="100%"
+                height="100%"
+                id="svg"
+                viewBox="0 0 1440 390"
+                xmlns="http://www.w3.org/2000/svg"
+                className="transition duration-300 ease-in-out delay-150">
+                <path
+                  d="M 0,400 L 0,150 C 101.64593301435409,117.66507177033492 203.29186602870817,85.33014354066985 308,81 C 412.70813397129183,76.66985645933015 520.4784688995215,100.34449760765551 618,128 C 715.5215311004785,155.6555023923445 802.7942583732058,187.2918660287081 882,202 C 961.2057416267942,216.7081339712919 1032.3444976076555,214.48803827751198 1124,203 C 1215.6555023923445,191.51196172248802 1327.8277511961724,170.755980861244 1440,150 L 1440,400 L 0,400 Z"
+                  stroke="none"
+                  strokeWidth="0"
+                  fill="#1a1a2e"
+                  fillOpacity="1"
+                  className="transition-all duration-300 ease-in-out delay-150 path-0"></path>
+              </svg>
             </div>
-            <div className="relative mt-15 pt-10">
-              <Skills />
-            </div>
-            <div className="relative mt-15 pt-10">
-              <Projects />
-            </div>
-            <div className="relative mt-15 pt-10 min-h-screen pb-10">
-              <div className="absolute inset-0 overflow-hidden">
-                <StarsCanvas />
+            <div className="absolute z-15 top-50% bg-[#1a1a2e] w-full h-auto sm:h-[300px] md:h-auto md:top-[850px] lg:top-[1000px]">
+              <About isMobile={isMobile} />
+              <div className="relative mt-20 pt-10">
+                <Education />
               </div>
-              <div className="relative z-10">
-                <Contact />
+              <div className="relative mt-15 pt-10">
+                <Skills />
+              </div>
+              <div className="relative mt-15 pt-10">
+                <Projects />
+              </div>
+              <div className="relative mt-15 pt-10 min-h-screen pb-10">
+                <div className="absolute inset-0 overflow-hidden">
+                  <StarsCanvas />
+                </div>
+                <div className="relative z-10">
+                  <Contact />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </>
   );
 };
 
