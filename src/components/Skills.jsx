@@ -10,7 +10,7 @@ const tech = [
   technologies.libraries,
   technologies.databases,
   technologies.tools,
-  technologies.environments
+  technologies.environments,
 ];
 
 const techVariants = [
@@ -23,7 +23,8 @@ const techVariants = [
 ];
 
 const techItemClasses = "relative flex items-center group cursor-pointer";
-const techTooltipClasses = "opacity-0 w-fit min-w-[80px] bg-primary text-[#e5e6e9] text-center text-xs rounded-lg py-2 absolute z-10 group-hover:opacity-100 px-3 -top-12 -left-1/3 pointer-events-none";
+const techTooltipClasses =
+  "opacity-0 w-fit min-w-[80px] bg-primary text-[#e5e6e9] text-center text-xs rounded-lg py-2 absolute z-10 group-hover:opacity-100 px-3 -top-12 -left-1/3 pointer-events-none";
 
 const Skills = () => {
   const languageSections = tech.map((technology, index) => (
@@ -57,13 +58,15 @@ const Skills = () => {
   ));
 
   const techNames = techVariants.map((techName, index) => (
-    <h3 className="h-[50px] md:flex items-center hidden text-[#e5e6e9]" key={index}>
+    <h3
+      className="h-[50px] md:flex items-center hidden text-[#e5e6e9]"
+      key={index}>
       {techName}
     </h3>
   ));
 
   return (
-    <section className="w-full h-fit p-8 mt-20" id="skills">
+    <section className="w-full h-fit p-6 sm:p-8 mt-20" id="skills">
       <motion.div
         variants={textVariant()}
         initial="hidden"
@@ -80,17 +83,19 @@ const Skills = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className="mt-4 text-[#e5e6e9] text-[17px] bg-[#2e384d] w-full md:w-11/12 lg:w-3/5 xl:w-1/2 h-full leading-[30px] flex md:flex-row flex-col gap-4 p-8 md:px-16 rounded-lg justify-between bg-opacity-90 shadow-sm shadow-[#804dee]">
+          className="mt-4 text-[#e5e6e9] text-[17px] bg-[#2e384d] w-full md:w-[95%] lg:w-[85%] xl:w-3/4 2xl:w-2/3 h-full leading-[30px] flex md:flex-row flex-col gap-4 p-4 sm:p-6 md:p-8 md:px-8 lg:px-12 rounded-lg justify-between bg-opacity-90 shadow-sm shadow-[#804dee]">
           <motion.div
             variants={textVariant()}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="flex flex-col justify-between h-full gap-5">
+            className="flex flex-col justify-between h-full gap-5 md:w-auto">
             {techNames}
           </motion.div>
-          <div className="w-[2px] h-[400px] bg-[#cbb8f5] rounded-lg md:flex hidden mx-8" />
-          <div className="md:w-[80%] w-full pl-2 h-full flex flex-col gap-8">
+
+          <div className="w-[2px] h-[400px] bg-[#cbb8f5] rounded-lg md:flex hidden mx-4 md:mx-6 lg:mx-8 flex-shrink-0" />
+
+          <div className="md:w-[80%] lg:flex-1 w-full pl-0 md:pl-2 h-full flex flex-col gap-8">
             {languageSections}
           </div>
         </motion.div>

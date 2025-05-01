@@ -22,7 +22,7 @@ const ProjectCard = ({
       viewport={{ once: true, amount: 0.25 }}>
       <Tilt
         options={{ max: 45, scale: 1, speed: 450 }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full">
+        className="bg-tertiary p-5 rounded-2xl w-full sm:w-[320px] md:w-[340px] lg:w-[360px]">
         <div className="relative w-full h-[230px]">
           <img
             src={image}
@@ -74,12 +74,13 @@ const Projects = () => {
           className="mt-3 text-secondary text-[18px] max-w-3xl leading-[30px]">
           Following projects showcases my skills and experience through
           real-world examples of my work. Each project is briefly described with
-          links to code repositories. It reflects my
-          ability to solve complex problems, work with different technologies,
-          and manage projects effectively.
+          links to code repositories. It reflects my ability to solve complex
+          problems, work with different technologies, and manage projects
+          effectively.
         </motion.p>
       </div>
-      <div className="mt-20 flex flex-wrap justify-center sm:justify-start gap-7">
+
+      <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 justify-items-center sm:justify-items-start">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
