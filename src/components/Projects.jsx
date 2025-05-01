@@ -29,7 +29,7 @@ const ProjectCard = ({
             alt={name}
             className="w-full h-full object-cover rounded-2xl"
           />
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
+          <div className="absolute inset-0 flex justify-end m-3 opacity-0 hover:opacity-100 transition-opacity">
             <div
               onClick={() => window.open(source_code_link, "_blank")}
               className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer">
@@ -62,7 +62,7 @@ const ProjectCard = ({
 const Projects = () => {
   return (
     <section
-      className="px-4 md:container md:mx-auto md:px-6 lg:px-12 xl:px-24 md:pt-4 lg:pt-6"
+      className="container mx-auto px-4 md:px-6 lg:px-12 xl:px-24 pt-2 md:pt-4 lg:pt-6"
       id="projects">
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} pl-0 md:pl-8`}>MY WORK</p>
@@ -74,7 +74,7 @@ const Projects = () => {
           className="mt-3 text-secondary text-[18px] max-w-3xl leading-[30px]">
           Following projects showcases my skills and experience through
           real-world examples of my work. Each project is briefly described with
-          links to code repositories and live demos in it. It reflects my
+          links to code repositories. It reflects my
           ability to solve complex problems, work with different technologies,
           and manage projects effectively.
         </motion.p>

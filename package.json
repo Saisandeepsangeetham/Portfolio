@@ -21,6 +21,8 @@
     "react-dom": "^19.0.0",
     "react-error-boundary": "^5.0.0",
     "react-icons": "^5.5.0",
+    "react-lottie": "^1.2.10",
+    "react-particle-image": "^1.0.2",
     "react-router-dom": "^7.3.0",
     "react-tilt": "^1.0.2",
     "react-type-animation": "^3.2.0",

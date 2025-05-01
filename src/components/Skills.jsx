@@ -22,6 +22,9 @@ const techVariants = [
   "Environments",
 ];
 
+const techItemClasses = "relative flex items-center group cursor-pointer";
+const techTooltipClasses = "opacity-0 w-fit min-w-[80px] bg-primary text-[#e5e6e9] text-center text-xs rounded-lg py-2 absolute z-10 group-hover:opacity-100 px-3 -top-12 -left-1/3 pointer-events-none";
+
 const Skills = () => {
   const languageSections = tech.map((technology, index) => (
     <div className="w-full h-fit flex gap-2 md:flex-row flex-col" key={index}>
@@ -39,15 +42,13 @@ const Skills = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-row">
-            <div className="w-[40px] h-[40px] relative flex items-center group cursor-pointer">
+            <div className={`w-[40px] h-[40px] ${techItemClasses}`}>
               <img
                 src={tech.icon}
                 alt={tech.name}
                 className="w-full h-full object-contain"
               />
-              <div className="opacity-0 w-fit min-w-[80px] bg-primary text-[#e5e6e9] text-center text-xs rounded-lg py-2 absolute z-10 group-hover:opacity-100 px-3 -top-12 -left-1/3 pointer-events-none">
-                {tech.name}
-              </div>
+              <div className={techTooltipClasses}>{tech.name}</div>
             </div>
           </a>
         ))}
@@ -79,7 +80,7 @@ const Skills = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className="mt-4 text-[#e5e6e9] text-[17px] bg-[#2e384d] w-full md:w-[90%] lg:w-[60%] xl:w-[50%] h-full leading-[30px] flex md:flex-row flex-col gap-4 p-8 md:px-16 rounded-lg justify-between bg-opacity-90 shadow-sm shadow-[#804dee]">
+          className="mt-4 text-[#e5e6e9] text-[17px] bg-[#2e384d] w-full md:w-11/12 lg:w-3/5 xl:w-1/2 h-full leading-[30px] flex md:flex-row flex-col gap-4 p-8 md:px-16 rounded-lg justify-between bg-opacity-90 shadow-sm shadow-[#804dee]">
           <motion.div
             variants={textVariant()}
             initial="hidden"

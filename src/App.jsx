@@ -1,39 +1,42 @@
 import { BrowserRouter } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 
-import {
-  About,
-  Contact,
-  Education,
-  Projects,
-  Hero,
-  Navbar,
-  Skills,
-  StarsCanvas,
-} from "./components";
+import { Navbar, Hero } from "./components";
 import HeroBackground from "./components/HeroBackground";
-import { Preloader } from "./components/Loader";
+import DevAnimationPreloader from "./components/Preloader/DevAnimationPreloader";
+
+const About = lazy(() => import("./components/About"));
+const Education = lazy(() => import("./components/Education"));
+const Skills = lazy(() => import("./components/Skills"));
+const Projects = lazy(() => import("./components/Projects"));
+const Contact = lazy(() => import("./components/Contact"));
+const StarsCanvas = lazy(() => import("./components/canvas/Stars"));
+
+const SectionLoader = () => (
+  <div className="flex justify-center items-center py-10">
+    <div className="w-12 h-12 rounded-full border-4 border-secondary border-t-white animate-spin"></div>
+  </div>
+);
 
 const App = () => {
-  const [isMobile, setisMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");
-
-    setisMobile(mediaQuery.matches);
+    setIsMobile(mediaQuery.matches);
 
     const handleMediaQueryChange = (event) => {
-      setisMobile(event.matches);
+      setIsMobile(event.matches);
     };
 
     const preloadAssets = () => {
       window.addEventListener("load", () => {
-        setTimeout(() => {}, 500);
       });
     };
+
     preloadAssets();
     mediaQuery.addEventListener("change", handleMediaQueryChange);
+
     return () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
@@ -41,13 +44,13 @@ const App = () => {
 
   return (
     <>
-      {loading && <Preloader setLoading={setLoading}/>}
+      {loading && <DevAnimationPreloader setLoading={setLoading} />}
       <BrowserRouter>
         <div className="relative z-0 bg-primary">
           <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
             <Navbar />
             <HeroBackground />
-            <Hero />
+            <Hero isMobile={isMobile} />
           </div>
           <div>
             <div className="relative -mt-[300px] sm:-mt-26 md:-mt-20 block">
@@ -68,22 +71,39 @@ const App = () => {
               </svg>
             </div>
             <div className="absolute z-15 top-50% bg-[#1a1a2e] w-full h-auto sm:h-[300px] md:h-auto md:top-[850px] lg:top-[1000px]">
-              <About isMobile={isMobile} />
+              <Suspense fallback={<SectionLoader />}>
+                <About isMobile={isMobile} />
+              </Suspense>
+
               <div className="relative mt-20 pt-10">
-                <Education />
+                <Suspense fallback={<SectionLoader />}>
+                  <Education />
+                </Suspense>
               </div>
+
               <div className="relative mt-15 pt-10">
-                <Skills />
+                <Suspense fallback={<SectionLoader />}>
+                  <Skills />
+                </Suspense>
               </div>
+
               <div className="relative mt-15 pt-10">
-                <Projects />
+                <Suspense fallback={<SectionLoader />}>
+                  <Projects />
+                </Suspense>
               </div>
+
               <div className="relative mt-15 pt-10 min-h-screen pb-10">
                 <div className="absolute inset-0 overflow-hidden">
-                  <StarsCanvas />
+                  <Suspense
+                    fallback={<div className="h-full w-full bg-primary/50" />}>
+                    <StarsCanvas />
+                  </Suspense>
                 </div>
                 <div className="relative z-10">
-                  <Contact />
+                  <Suspense fallback={<SectionLoader />}>
+                    <Contact />
+                  </Suspense>
                 </div>
               </div>
             </div>

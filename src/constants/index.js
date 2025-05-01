@@ -212,7 +212,7 @@ const technologies = {
       link: "https://git-scm.com/",
     },
     {
-      name: "Github",
+      name: "GitHub",
       icon: github,
       link: "https://github.com/",
     },
@@ -239,7 +239,7 @@ const technologies = {
       link: "https://nodejs.org/en",
     },
     {
-      name: "Google Cloud Program",
+      name: "Google Cloud Platform", 
       icon: gcp,
       link: "https://console.cloud.google.com/",
     },
@@ -250,7 +250,6 @@ const technologies = {
     },
   ],
 };
-``;
 
 const education = [
   {
@@ -259,7 +258,7 @@ const education = [
     icon: ssnLogo,
     date: "Oct 2022 - Present",
     points: [
-      "Currently in the pre-year of undergraduate studies in Computer Science, maintaining a CGPA of 8.3/10 up to the 5th semester.",
+      "Currently in the prefinal-year of undergraduate studies in Computer Science, maintaining a CGPA of 8.3/10 up to the 5th semester.",
       "Completed key coursework in Data Structures, DBMS, OOP, and Operating Systems, forming a strong foundation in both theoretical and applied computer science.",
       "Recipient of the AICTE Scholarship for academic excellence in the 12th State Board Exams, covering 50% of annual tuition fees throughout the degree."
     ],

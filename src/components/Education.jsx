@@ -11,42 +11,44 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 
 const EducationCard = ({ education }) => {
-  return (<VerticalTimelineElement
-    contentStyle={{ background: "#1d1836", color: "#fff" }}
-    contentArrowStyle={{ borderRight: "7px solid #232631" }}
-    date={education.date}
-    icon={
-      <div className= "flex justify-center items-center w-full h-full overflow-hidden">
-        <img
-          src={education.icon}
-          alt={education.title}
-          className="w-100% h-100% object-contain rounded-full"
-        />
+  return (
+    <VerticalTimelineElement
+      contentStyle={{ background: "#1d1836", color: "#fff" }}
+      contentArrowStyle={{ borderRight: "7px solid #232631" }}
+      date={education.date}
+      icon={
+        <div className="flex justify-center items-center w-full h-full overflow-hidden">
+          <img
+            src={education.icon}
+            alt={education.title}
+            className="w-100% h-100% object-contain rounded-full"
+          />
+        </div>
+      }>
+      <div>
+        <h3 className="text-white text-[24px] font-bold">{education.title}</h3>
+        <p className="text-secondary text-[16px] font-semibold m-0">
+          {education.name}
+        </p>
+        <ul className="mt-5 list-disc ml-5 space-y-2">
+          {education.points.map((point, index) => (
+            <li
+              key={`experience-point-${index}`}
+              className="text-secondary text-[14px] pl-1 tracking-wider">
+              {point}
+            </li>
+          ))}
+        </ul>
       </div>
-    }>
-    <div>
-      <h3 className="text-white text-[24px] font-bold">{education.title}</h3>
-      <p className="text-secondary text-[16px] font-semibold" style= {{margin:0}}>{education.name}</p>
-      <ul className="mt-5 list-disc ml-5 space-y-2">
-        {education.points.map((point, index) => (
-          <li
-            key={`experience-point-${index}`}
-            className="text-secondary text-[14px] pl-1 tracking-wider"
-          >
-            {point}
-          </li>
-        ))}
-      </ul>
-    </div>
-
-  </VerticalTimelineElement>)
+    </VerticalTimelineElement>
+  );
 };
 
 const Education = () => {
   return (
     <>
       <motion.div variants={textVariant()} id="education">
-        <h2 className="text-white font-black text-center md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] pl-8">Education</h2>
+        <h2 className={styles.sectionHeadText}>Education</h2>
       </motion.div>
       <div className="mt-20 flex flex-col">
         <VerticalTimeline>

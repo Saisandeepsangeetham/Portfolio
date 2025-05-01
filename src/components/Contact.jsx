@@ -1,11 +1,9 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { slideIn } from "../utils/motion";
-import {styles } from "../styles";
-import {motion} from "framer-motion";
+import { styles } from "../styles";
+import { motion } from "framer-motion";
 import { EarthCanvas } from "./canvas";
 import emailjs from "@emailjs/browser";
-
-import { useRef, useState } from "react";
 
 const Contact = () => {
   const formRef = useRef();
@@ -15,7 +13,7 @@ const Contact = () => {
     message: "",
   });
 
-  const [loading,setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -68,14 +66,19 @@ const Contact = () => {
     <section
       className="md:container md:mx-auto md:px-6 lg:px-12 xl:px-24 md:pt-4 lg:pt-6"
       id="contact">
-      <div  className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}>
+      <div className="xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden">
         <motion.div
           variants={slideIn("left", "tween", 0.2, 1)}
           className="bg-black-100 p-8 rounded-2xl">
-          <p className={`${styles.sectionSubText} pl-0 md:pl-8`}>Get in touch</p>
+          <p className={`${styles.sectionSubText} pl-0 md:pl-8`}>
+            Get in touch
+          </p>
           <h3 className={`${styles.sectionHeadText} pl-0 md:pl-8`}>Contact</h3>
 
-          <form ref={formRef} className="mt-12 flex flex-col gap-8" onSubmit={handleSubmit}>
+          <form
+            ref={formRef}
+            className="mt-12 flex flex-col gap-8"
+            onSubmit={handleSubmit}>
             <label className="flex flex-col">
               <span className="text-white font-medium mb-4">Your Name</span>
               <input
@@ -95,7 +98,7 @@ const Contact = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="What's your web address?"
+                placeholder="What's your Email address?"
                 className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
               />
             </label>
@@ -107,21 +110,20 @@ const Contact = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="What you want to say?"
+                placeholder="What would you want to say?"
                 className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
               />
             </label>
             <button
-            type='submit'
-            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
-          >
-            {loading ? "Sending..." : "Send"}
-          </button>
+              type="submit"
+              className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary">
+              {loading ? "Sending..." : "Send"}
+            </button>
           </form>
         </motion.div>
         <motion.div
           variants={slideIn("right", "tween", 0.2, 1)}
-          className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]">
+          className="h-[350px] md:h-[550px] xl:h-auto xl:flex-1">
           <EarthCanvas />
         </motion.div>
       </div>
