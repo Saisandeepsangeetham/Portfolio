@@ -357,7 +357,7 @@ const projects = [
   {
     name: "SSN Internship Management Portal",
     description:
-      "A comprehensive web app for managing student internships at SSN College. Features: Google OAuth login, internship submission form, document upload, coordinator dashboard with filtering, Excel export, and responsive design.",
+      "A comprehensive web app for managing student internships at SSN College. Features: Google OAuth login, internship submission form, document upload, coordinator dashboard with filtering, Excel export",
     tags: [
       {
         name: "JavaScript",
@@ -407,7 +407,7 @@ const projects = [
   {
     name: "Advanced Image Processing For Bone Fracture Detection",
     description:
-      "Research on enhancing X-ray images using CLAHE and smoothing filters, with Decision Trees/KNN/Linear Regression for fracture detection. Achieved higher accuracy via preprocessing.",
+      "Research on enhancing X-ray images using CLAHE and smoothing filters, with Decision Trees/KNN etc for fracture detection. Achieved higher accuracy via preprocessing.",
     tags: [
       {
         name: "Image Processing",

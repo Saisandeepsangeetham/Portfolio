@@ -64,7 +64,7 @@ const Contact = () => {
 
   return (
     <section
-      className="md:container md:mx-auto md:px-6 lg:px-12 xl:px-24 md:pt-4 lg:pt-6"
+      className="container mx-auto px-4 md:px-6 lg:px-12 xl:px-24 md:pt-4 lg:pt-6"
       id="contact">
       <div className="xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden">
         <motion.div

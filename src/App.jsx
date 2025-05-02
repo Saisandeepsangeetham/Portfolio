@@ -1,26 +1,25 @@
 import { BrowserRouter } from "react-router-dom";
-import React, { useEffect, useState, lazy, Suspense } from "react";
+import React, { useEffect, useState } from "react";
+import { useGLTF } from "@react-three/drei";
 
 import { Navbar, Hero } from "./components";
 import HeroBackground from "./components/HeroBackground";
 import DevAnimationPreloader from "./components/Preloader/DevAnimationPreloader";
+import About from "./components/About";
+import Education from "./components/Education";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import StarsCanvas from "./components/canvas/Stars";
 
-const About = lazy(() => import("./components/About"));
-const Education = lazy(() => import("./components/Education"));
-const Skills = lazy(() => import("./components/Skills"));
-const Projects = lazy(() => import("./components/Projects"));
-const Contact = lazy(() => import("./components/Contact"));
-const StarsCanvas = lazy(() => import("./components/canvas/Stars"));
-
-const SectionLoader = () => (
-  <div className="flex justify-center items-center py-10">
-    <div className="w-12 h-12 rounded-full border-4 border-secondary border-t-white animate-spin"></div>
-  </div>
-);
+useGLTF.preload("./desktop_pc/scene.gltf");
+useGLTF.preload("./planet/scene.gltf");
+useGLTF.preload("./astro/scene.gltf");
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");
     setIsMobile(mediaQuery.matches);
@@ -29,12 +28,6 @@ const App = () => {
       setIsMobile(event.matches);
     };
 
-    const preloadAssets = () => {
-      window.addEventListener("load", () => {
-      });
-    };
-
-    preloadAssets();
     mediaQuery.addEventListener("change", handleMediaQueryChange);
 
     return () => {
@@ -71,39 +64,27 @@ const App = () => {
               </svg>
             </div>
             <div className="absolute z-15 top-50% bg-[#1a1a2e] w-full h-auto sm:h-[300px] md:h-auto md:top-[850px] lg:top-[1000px]">
-              <Suspense fallback={<SectionLoader />}>
-                <About isMobile={isMobile} />
-              </Suspense>
+              {/* No more Suspense wrappers since everything is preloaded */}
+              <About isMobile={isMobile} />
 
               <div className="relative mt-20 pt-10">
-                <Suspense fallback={<SectionLoader />}>
-                  <Education />
-                </Suspense>
+                <Education />
               </div>
 
               <div className="relative mt-15 pt-10">
-                <Suspense fallback={<SectionLoader />}>
-                  <Skills />
-                </Suspense>
+                <Skills />
               </div>
 
               <div className="relative mt-15 pt-10">
-                <Suspense fallback={<SectionLoader />}>
-                  <Projects />
-                </Suspense>
+                <Projects />
               </div>
 
               <div className="relative mt-15 pt-10 min-h-screen pb-10">
                 <div className="absolute inset-0 overflow-hidden">
-                  <Suspense
-                    fallback={<div className="h-full w-full bg-primary/50" />}>
-                    <StarsCanvas />
-                  </Suspense>
+                  <StarsCanvas />
                 </div>
                 <div className="relative z-10">
-                  <Suspense fallback={<SectionLoader />}>
-                    <Contact />
-                  </Suspense>
+                  <Contact />
                 </div>
               </div>
             </div>
