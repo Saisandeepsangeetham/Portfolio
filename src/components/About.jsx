@@ -51,16 +51,16 @@ const About = ({ isMobile }) => {
             <motion.p
               variants={fadeIn("", "", 0.1, 1)}
               className="mt-4 text-secondary text-[17px] max-w-4xl leading-[30px]">
-              Hello! I am Saisandeep Sangeetham, a tech enthusiast and a problem
-              solver currently pursuing Bachelor of Engineering in Computer
-              Science at SSN College of Engineering, Chennai ,set to graduate in
-              2026. I love exploring AI and machine learning . I am skilled in
-              Python, C++ and web development tools like React.js and Node.js,
-              basic knowledge with Three.js and React-three-fiber. I enjoy
-              creating smart systems using frameworks such as Flutter and Dart.
-              I thrive in team settings, balancing logic with creativity to
-              tackle real-world problems. Always eager to learn and make a
-              difference through technology!
+              Hello! I am Saisandeep Sangeetham, a tech enthusiast and problem
+              solver currently pursuing a Bachelor of Engineering in Computer
+              Science at SSN College of Engineering, Chennai, set to graduate in
+              2026. I love exploring AI and machine learning, and I am skilled
+              in Python, C++, and web development tools like React.js and
+              Node.js. I also have basic knowledge of Three.js and React Three
+              Fiber. I enjoy creating smart systems using frameworks such as
+              Flutter and Dart. I thrive in team settings, balancing logic with
+              creativity to tackle real-world problems. I am always eager to
+              learn and make a difference through technology!
             </motion.p>
 
             <a

@@ -26,7 +26,7 @@ This portfolio website highlights my projects, skills, and experiences with:
 
 ## 🌐 Live Demo
 
-Check out the live version here: [https://saisandeep-portfolio.vercel.app/](https://saisandeep-portfolio.vercel.app/)
+Check out the live version here: [https://saisandeep.netlify.app/](https://saisandeep.netlify.app/)
 
 ---
 ## ✨ Features
